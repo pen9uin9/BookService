@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Welcome {
 	static final int NUM_BOOK = 3;
-	static final int NUM_ITEM = 7;
+	//static final int NUM_ITEM = 7;
 
 	public static void main(String[] args) {
 		ArrayList<ArrayList<String>> bookList = new ArrayList<>();
@@ -55,19 +55,15 @@ public class Welcome {
 						menuCartAddItem(bookList);
 						break;
 					case 5:
-						// System.out.println("5. 장바구니의 항목 수량 줄이기");
 						menuCartRemoveItemCount();
 						break;
 					case 6:
-						// System.out.println("6. 장바구니의 항목 삭제하기");
 						menuCartRemoveItem();
 						break;
 					case 7:
-						// System.out.println("7. 영수증 표시하기");
 						menuCartBill();
 						break;
 					case 8:
-						// System.out.println("8. 종료");
 						menuExit();
 						quit = true;
 						break;
@@ -95,10 +91,12 @@ public class Welcome {
 	}
 	public static void menuCartAddItem(ArrayList<ArrayList<String>> bookList) {
 		BookList(bookList);
-		for	(ArrayList<String> book : bookList)
-			for (String item : book)
+		for	(ArrayList<String> book : bookList) {
+			for (String item : book) {
 				System.out.print(item + " | ");
+			}
 			System.out.println(" ");
+		}
 		boolean quit = false;
 		while (!quit) {
 			System.out.println("장바구니에 추가할 도서의 ID를 입력하세요 : ");
@@ -106,7 +104,7 @@ public class Welcome {
 			String str = input.nextLine();
 			boolean flag = false;
 			int numId = -1;
-			for (int i = 0; i < NUM_BOOK; i++) {
+			for (int i = 0; i < bookList.size(); i++) {
 				if (str.equals(bookList.get(i).get(0))) {
 					numId = i;
 					flag = true;

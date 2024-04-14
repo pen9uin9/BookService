@@ -1,27 +1,27 @@
 package homework;
-
+import java.util.ArrayList;
 public class CartItem {
-	private String[] itemBook = new String[7];
+	private ArrayList<String> itemBook;
 	private String bookID;
 	private int quantity;
 	private int totalPrice;
 	
 	public CartItem() {
-		
+		itemBook = new ArrayList<String>();
 	}
 	
-	public CartItem(String[]book) {
+	public CartItem(ArrayList<String> book) {
 		this.setItemBook(book);
-		this.setBookID(book[0]);
+        this.setBookID(book.get(0));
 		this.setQuantity(1);
 		updateTotalPrice();
 	}
 
-	public String[] getItemBook() {
+	public ArrayList<String> getItemBook() {
 		return itemBook;
 	}
 
-	public void setItemBook(String[] itemBook) {
+	public void setItemBook(ArrayList<String> itemBook) {
 		this.itemBook = itemBook;
 	}
 
@@ -48,7 +48,7 @@ public class CartItem {
 	}
 
 	public void updateTotalPrice() {
-		totalPrice = Integer.parseInt(this.itemBook[2])* this.quantity;
+		totalPrice = Integer.parseInt(this.itemBook.get(2))* this.quantity;
 	}
 	
 	

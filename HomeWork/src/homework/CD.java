@@ -4,7 +4,7 @@ public class CD {
 	static final int NUM_CDITEM = 9;
 	
 	public static void menuCartAddItem(String[][] cd, String [] list) {
-	      DVDList(cd);
+	      CDList(cd);
 	      List(list);
 	      for   (int k = 0; k < NUM_CD; k++)
 	         for (int j = 0; j < NUM_CDITEM; j++)
@@ -12,7 +12,7 @@ public class CD {
 	         System.out.println(" ");
 	   }
 	
-	public static void DVDList (String[][] cd) {
+	public static void CDList (String[][] cd) {
 		cd[0][0] = "";
 		cd[0][1] = "CD1234";
 		cd[0][2] = "싱어게인3";
